@@ -1,0 +1,25 @@
+* {
+    color: whitesmoke!important;
+    background: black!important;
+}
+
+#word {
+    letter-spacing: 0.5rem;
+}
+
+#title {
+
+}
+
+#instructions {
+    list-style-type: upper-roman;
+}
+
+.row {
+    min-height: 5rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
