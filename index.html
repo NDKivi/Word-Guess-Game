@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Astronomical Logos</title>
+    <title>Escape the Black Hole</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
@@ -13,12 +13,12 @@
 </head>
 
 <body>
-    <div class="container mt-md-3">
+    <div class="container mt-md-3 borderless">
         <header class="row">
-            <div id="title" class="col-md-7">
-                <h1 class="text-center mt-md-5 mt-1">Astronomical Logos</h1>
+            <div id="title" class="col-md-6">
+                <h1 class="mt-md-5 mt-1 border-0 rounded-0 no-gutters">Escape the Black Hole</h1>
             </div>
-            <div class="col-md-5 border border-white">
+            <div id="instructionscontainer" class="col-md-6">
                 <h5>Instructions</h5>
                 <ul id="instructions">
                     <li>Guess the missing letters in the term from Astronomy below. </li>
@@ -29,57 +29,61 @@
             </div>
         </header>
         <div id="wordrow" class="row">
-            <div class="col-md-7 border border-white">
-                <h5>Current Astronomical Term</h5>
+            <div class="col-md-6">
+                <h2>Current Astronomical Term</h2>
                 <p id="word" class="text-monospace"></p>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <p id="warning" class="text-danger"></p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-7">
-                <h5>Bad letters guessed:</h5>
+            <div class="col-md-4 bucket">
+                <h5>Bucket of Bad Letters</h5>
                 <p id="fail"></p>
             </div>
-            <div class="col-md-5 border border-white">
-                <ul>
-                    <li>Losses:
-                        <span id="losses"></span>
-                    </li>
-                    <li>Wins:
-                        <span id="wins"></span>
-                    </li>
-                </ul>
+            <div class="col-md-4 container">
+                <div class="row">
+                    <div class="col-6">
+                        <p>Remaining Chances</p>
+                    </div>
+                    <div class="col-6">
+                        <p id="remainingguesses"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p id="gameovermessage"></p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-7 border border-white">
-                <h5>Words from previous rounds:</h5>
+        <div class="row mt-5">
+            <div class="col-md-4 container">
+                <div class="row">
+                    <div class="col-6">
+                        <p>Losses</p>
+                        <p>Wins</p>
+                    </div>
+                    <div class="col-6">
+                        <p id="losses"></p>
+                        <p id="wins"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 bucket">
+                <h5>Bucket of Past Words</h5>
                 <p id="pastwords"></p>
             </div>
-            <div class="col-md-5">
-                <h5 id="gameovermessage"></h5>
-            </div>
+
         </div>
     </div>
 
-
-
-    <!-- <p>You guessed:</p>
-    <p id="input"></p>
-    <p id="warning"></p>
-    <h3 id="word"></h3>
-    <h1>Losses:</h1>
-    <h5 id="losses"></h5>
-    <h1>Wins:</h1>
-    <h5 id="wins"></h5> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+        
     <script>
         updateDisplay();
     </script>

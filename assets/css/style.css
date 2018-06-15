@@ -1,25 +1,42 @@
 * {
-    color: whitesmoke!important;
-    background: black!important;
+    color: #DDDDDD;
+    background-color: black;
+    background-image: url("../images/Pleiades.png");
+    box-shadow: none!important;
+}
+
+div, header, li, p, h1, header, h5, ul, span, body, h2 {
+    background: transparent;
+}
+
+#gameovermessage {
+    color: coral;
 }
 
 #word {
     letter-spacing: 0.5rem;
+    color: #FF9999;
+    font-size: 1.5rem;
 }
 
 #title {
-
+    color: gold!important;
 }
 
 #instructions {
     list-style-type: upper-roman;
 }
 
+#instructionscontainer {
+    background-color: rgba(255,255,255,0.1); 
+}
+
+.bucket {
+    border-bottom: #DDDDDD 5px solid;
+    border-right: #DDDDDD 5px solid;
+    border-left: #DDDDDD 5px solid;
+}
+
 .row {
     min-height: 5rem;
 }
-
-ul {
-    list-style-type: none;
-}
-

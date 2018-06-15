@@ -154,6 +154,7 @@ function initializeShowArray() {
 function updateDisplay() {
     displayString();
     displayLettersNotInMysteryWord();
+    displayGuessesLeft();
     displayLosses();
     displayWins();
     displayPastWords();
@@ -172,7 +173,15 @@ function displayString() {
 }
 
 function displayLettersNotInMysteryWord() {
-    document.getElementById("fail").textContent = lettersNotInMysteryWord.toString();
+    let str = "";
+    let arrLength = lettersNotInMysteryWord.length;
+    if (arrLength > 0) { 
+        for (let i = 0; i < arrLength - 1; i++) {
+            str += lettersNotInMysteryWord[i] + ", "
+        }
+        str += lettersNotInMysteryWord[arrLength - 1];
+    }
+    document.getElementById("fail").textContent = str;
 }
 
 function displayLosses() {
@@ -184,16 +193,26 @@ function displayWins() {
 }
 
 function displayPastWords() {
-    document.getElementById("pastwords").textContent = pastMysteryStrings.toString();
+    let str = "";
+    for (currentString of pastMysteryStrings) {
+        str += currentString + "\n";
+    }
+    document.getElementById("pastwords").textContent = str;
+}
+
+function displayGuessesLeft() {
+    let num = ALLOWEDGUESSES - lettersNotInMysteryWord.length;
+    if (num < 0) {
+        num = 0;
+    }
+    document.getElementById("remainingguesses").textContent = "" + num;
 }
 
 function displayGameOver(isWinner) {
     let myElement = document.getElementById("gameovermessage");
     if (isWinner) {
-        myElement.textContent = "You won!!!!!!!!! You can now observe the universe at your leisure with complete control of the Hubble Space Telescope.  Press the space bar to start another round.";
+        myElement.textContent = "You won!!!!!!!!! You can now observe the universe at your leisure with complete control of the Hubble Space Telescope.  Press the space bar to start another round.";  
     } else {
         myElement.textContent = "You lost!!!!!!!! You passed the event horizon and were obliterated by the singularity of the black hole.  Regardless, press the space bar to start another round.";
     }
 }
-
-
